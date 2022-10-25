@@ -13,4 +13,28 @@ router.get('/', async (req, res) => {
     res.send(users);
 });
 
+//Register User
+router.post('/', async (req, res) => {
+    try {
+
+        const hashedPass = await bcrypt.hash(req.body.password, 10);
+
+        const user = new User({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: hashedPass,
+        });
+
+        const newUser = await user.save();
+
+        res.send(newUser);
+
+    } catch (error) {
+        res.status(500).send({ msg: error.message });
+    }
+
+});
+
+
 module.exports = router;

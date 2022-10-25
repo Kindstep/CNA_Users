@@ -9,10 +9,10 @@ POST {{Local_URL}}/users
 Content-Type: application/json
 
 {
-    "firstName": "",
-    "lastName": "",
-    "email": "",
-    "password": ""
+    "firstName": "Test",
+    "lastName": "User",
+    "email": "test@test.com",
+    "password": "Pass123"
 }
 
 ### LOG IN
