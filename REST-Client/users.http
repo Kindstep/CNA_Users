@@ -1,0 +1,44 @@
+@Local_URL = http://localhost:3030
+
+
+GET {{Local_URL}}/users
+
+### Register new user
+
+POST {{Local_URL}}/users
+Content-Type: application/json
+
+{
+    "firstName": "",
+    "lastName": "",
+    "email": "",
+    "password": ""
+}
+
+### LOG IN
+
+POST {{Local_URL}}/users/login
+Content-Type: application/json
+
+{
+    "email": "",
+    "password": ""
+}
+
+
+### UPDATE User (with user id)
+
+PATCH {{Local_URL}}/users/63342a2b518aabebce149a54
+Content-Type: application/json
+
+{
+    "firstName": "",
+    "lastName": "",
+    "email": "",
+    "password": ""
+}
+
+### DELETE User
+
+DELETE {{Local_URL}}/users/63342f3161f6cc43a9447b78
+Content-Type: application/json
